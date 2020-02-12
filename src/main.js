@@ -13,6 +13,8 @@ import { Icon } from 'ant-design-vue';
 Vue.use(Icon);
 import { Layout } from 'ant-design-vue';
 Vue.use(Layout);
+import { Breadcrumb } from 'ant-design-vue';
+Vue.use(Breadcrumb);
 
 new Vue({
     render: h => h(App),

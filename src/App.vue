@@ -32,14 +32,14 @@
         </a-layout-header>
         <a-layout-content
           :style="{
-            margin: '24px 16px',
-            padding: '24px',
-            background: '#fff',
-            minHeight: '280px'
+            margin: '0px 16px',
           }"
         >
           <router-view></router-view>
         </a-layout-content>
+        <a-layout-footer style="text-align: center">
+        English Writing Platform ©2020 Created by Mazarine-Fantas
+      </a-layout-footer>
       </a-layout>
     </a-layout>
   </div>
