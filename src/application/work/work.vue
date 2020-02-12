@@ -3,7 +3,7 @@
     <a-layout id="components-layout-demo-custom-trigger">
       <a-layout-sider :trigger="null" collapsible v-model="collapsed">
         <div class="logo" />
-        <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['1']">
+        <a-menu theme="dark" mode="inline" :defaultSelectedKeys="selectedKeys">
           <a-menu-item key="/Home">
             <router-link to="/Home">
               <a-icon type="user" />
@@ -53,7 +53,8 @@ export default {
   name: "App",
   data() {
     return {
-      collapsed: false
+      collapsed: false,
+      selectedKeys: "/Home"
     };
   }
 };
