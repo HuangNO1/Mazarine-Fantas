@@ -5,8 +5,36 @@
     </div>
 
     <div class="forms">
+      <a-row>
+        <a-col :span="12">
+          <div>
+            <router-link to="/Login">
+              <a-button
+                :type="isClickSignIn"
+                @click="ClickSignIn"
+                size="large"
+                block
+                >Sign In</a-button
+              >
+            </router-link>
+          </div>
+        </a-col>
+        <a-col :span="12">
+          <div>
+            <router-link to="/Register">
+              <a-button
+                :type="isClickSignUp"
+                @click="ClickSignUp"
+                size="large"
+                block
+                >Sign Up</a-button
+              >
+            </router-link>
+          </div>
+        </a-col>
+      </a-row>
       <div>
-
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -36,7 +64,14 @@ function isPC() {
 
 export default {
   name: "App",
+  data() {
+    return {
+      isClickSignIn: "link",
+      isClickSignUp: "primary"
+    };
+  },
   created() {
+    this.$router.push({ path: '/Login' });
     console.log("isPC");
     if (isPC() === true) {
       console.log("isPC = true");
@@ -48,6 +83,12 @@ export default {
   methods: {
     callback(key) {
       console.log(key);
+    },
+    ClickSignIn() {
+      (this.isClickSignIn = "link"), (this.isClickSignUp = "primary");
+    },
+    ClickSignUp() {
+      (this.isClickSignIn = "primary"), (this.isClickSignUp = "link");
     }
   }
 };
@@ -62,15 +103,9 @@ export default {
     "WenQuanYi Micro Hei", "Droid Sans Fallback", "AR PL UMing TW", Roboto,
     "Helvetica Neue", "Hiragino Maru Gothic ProN", メイリオ,
     "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   height: 100%;
-  width: 100%;
-  text-align: justify;
-  text-justify: inter-ideograph;
   background: #78bef5;
-  position: relative;
   animation: TestMove3 3s infinite alternate; /*IE*/
   -moz-animation: TestMove3 3s infinite alternate; /*FireFox*/
   -webkit-animation: TestMove3 3s infinite alternate; /*Chrome, Safari*/
@@ -104,7 +139,6 @@ export default {
 .icon {
   font-size: 8rem;
   color: #46a6f0;
-  margin-top: 0.7rem;
   margin-left: 1.5rem;
 }
 
@@ -114,5 +148,6 @@ export default {
   width: 30rem;
   background-color: #ffffff;
   opacity: 80%;
+  border-radius: 1em;
 }
 </style>

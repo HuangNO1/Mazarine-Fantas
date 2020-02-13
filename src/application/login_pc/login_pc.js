@@ -3,18 +3,8 @@ import App from './login_pc.vue'
 import router from "./router" //引入 router
 import 'ant-design-vue/dist/antd.css';
 
-import { Button } from 'ant-design-vue';
-Vue.use(Button);
-import { Icon } from 'ant-design-vue';
-Vue.use(Icon);
-import { Layout } from 'ant-design-vue';
-Vue.use(Layout);
-import { Menu } from 'ant-design-vue';
-Vue.use(Menu);
-import { Breadcrumb } from 'ant-design-vue';
-Vue.use(Breadcrumb);
-import { Tabs } from 'ant-design-vue';
-Vue.use(Tabs);
+import { Button, Icon, Menu, Tabs, Row, Col, Form, Input } from 'ant-design-vue';
+Vue.use(Button).use(Icon).use(Menu).use(Tabs).use(Row).use(Col).use(Form).use(Input);
 
 Vue.config.productionTip = false
 

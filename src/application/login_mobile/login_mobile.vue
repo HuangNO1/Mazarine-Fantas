@@ -31,6 +31,7 @@ function isPC() {
 export default {
   name: "App",
   created() {
+    this.$router.push({ path: '/Login' });
     console.log("isPC");
     if (isPC() === true) {
       document.location.href = "/login_pc";
