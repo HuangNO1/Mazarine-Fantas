@@ -1,48 +1,16 @@
 <template>
   <div id="app">
-    <a-layout id="components-layout-demo-custom-trigger">
-      <a-layout-sider :trigger="null" collapsible v-model="collapsed">
-        <div class="logo" />
-        <a-menu theme="dark" mode="inline" :defaultSelectedKeys="selectedKeys">
-          <a-menu-item key="/Home">
-            <router-link to="/Home">
-              <a-icon type="user" />
-              <span>nav 1</span>
-            </router-link>
-          </a-menu-item>
-          <a-menu-item key="/Setting">
-            <router-link to="/Setting">
-              <a-icon type="video-camera" />
-              <span>nav 2</span>
-            </router-link>
-          </a-menu-item>
-          <a-menu-item key="3">
-            <a-icon type="upload" />
-            <span>nav 3</span>
-          </a-menu-item>
-        </a-menu>
-      </a-layout-sider>
-      <a-layout>
-        <a-layout-header style="background: #fff; padding: 0">
-          <a-icon
-            class="trigger"
-            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-            @click="() => (collapsed = !collapsed)"
-          />
-          <a-button type="primary" href='login.html'>Primary</a-button>
-        </a-layout-header>
-        <a-layout-content
-          :style="{
-            margin: '0px 16px',
-          }"
-        >
-          <router-view></router-view>
-        </a-layout-content>
-        <a-layout-footer style="text-align: center">
-        English Writing Platform ©2020 Created by Mazarine-Fantas
-      </a-layout-footer>
-      </a-layout>
-    </a-layout>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+
+    <button type="button" class="btn btn-link">Link</button>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -73,27 +41,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   height: 100%;
-}
-
-#components-layout-demo-custom-trigger {
-  height: 100%;
-}
-
-#components-layout-demo-custom-trigger .trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-#components-layout-demo-custom-trigger .trigger:hover {
-  color: #1890ff;
-}
-
-#components-layout-demo-custom-trigger .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
 }
 </style>

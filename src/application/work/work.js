@@ -1,20 +1,10 @@
 import Vue from 'vue'
 import App from './work.vue'
 import router from "./router" //引入 router
-import 'ant-design-vue/dist/antd.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 Vue.config.productionTip = false
-
-import { Button } from 'ant-design-vue';
-Vue.use(Button);
-import { Menu } from 'ant-design-vue';
-Vue.use(Menu);
-import { Icon } from 'ant-design-vue';
-Vue.use(Icon);
-import { Layout } from 'ant-design-vue';
-Vue.use(Layout);
-import { Breadcrumb } from 'ant-design-vue';
-Vue.use(Breadcrumb);
 
 new Vue({
     render: h => h(App),
