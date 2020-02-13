@@ -3,20 +3,20 @@
     <a-layout id="components-layout-demo-custom-trigger">
       <a-layout-sider :trigger="null" collapsible v-model="collapsed">
         <div class="logo" />
-        <a-menu theme="dark" mode="inline" :defaultSelectedKeys="selectedKeys">
-          <a-menu-item key="/Home">
+        <a-menu theme="dark" mode="inline" selectedKeys="[this.$routes.path]">
+          <a-menu-item key="/Home" >
             <router-link to="/Home">
               <a-icon type="user" />
               <span>nav 1</span>
             </router-link>
           </a-menu-item>
-          <a-menu-item key="/Setting">
+          <a-menu-item key="/Setting" >
             <router-link to="/Setting">
               <a-icon type="video-camera" />
               <span>nav 2</span>
             </router-link>
           </a-menu-item>
-          <a-menu-item key="3">
+          <a-menu-item key="3" >
             <a-icon type="upload" />
             <span>nav 3</span>
           </a-menu-item>
@@ -54,11 +54,12 @@ export default {
   data() {
     return {
       collapsed: false,
-      selectedKeys: "/Home"
     };
   },
   created() {
     this.$router.push({ path: '/Home' })
+  },
+  methods: {
   }
 };
 </script>
