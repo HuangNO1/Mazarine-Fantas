@@ -1,13 +1,18 @@
 <template>
   <div id="app">
+    <div class="icon">
+      <a href="work_pc">M</a>
+    </div>
+
     <div class="forms">
-      <a-button type="primary" href="login_mobile">Primary</a-button>
+      <div>
+
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
 function isPC() {
   //是否為PC端
   var userAgentInfo = navigator.userAgent;
@@ -40,7 +45,11 @@ export default {
       console.log("isPC = false");
     }
   },
-  methods: {}
+  methods: {
+    callback(key) {
+      console.log(key);
+    }
+  }
 };
 </script>
 
@@ -57,13 +66,53 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   height: 100%;
+  width: 100%;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  background: #78bef5;
+  position: relative;
+  animation: TestMove3 3s infinite alternate; /*IE*/
+  -moz-animation: TestMove3 3s infinite alternate; /*FireFox*/
+  -webkit-animation: TestMove3 3s infinite alternate; /*Chrome, Safari*/
+}
+
+@keyframes TestMove3 {
+  from {
+    background-color: #78bef5;
+  }
+  to {
+    background-color: purple;
+  }
+}
+@-moz-keyframes TestMove3 {
+  from {
+    background-color: #78bef5;
+  }
+  to {
+    background-color: purple;
+  }
+}
+@-webkit-keyframes TestMove3 {
+  from {
+    background-color: #78bef5;
+  }
+  to {
+    background-color: purple;
+  }
+}
+
+.icon {
+  font-size: 8rem;
+  color: #46a6f0;
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
 }
 
 .forms {
-  justify-content: center;
-  align-items: center;
+  margin: 1rem auto auto;
   height: 30rem;
   width: 30rem;
-  background-color: blue;
+  background-color: #ffffff;
+  opacity: 80%;
 }
 </style>

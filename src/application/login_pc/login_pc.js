@@ -13,6 +13,9 @@ import { Menu } from 'ant-design-vue';
 Vue.use(Menu);
 import { Breadcrumb } from 'ant-design-vue';
 Vue.use(Breadcrumb);
+import { Tabs } from 'ant-design-vue';
+Vue.use(Tabs);
+
 Vue.config.productionTip = false
 
 new Vue({
