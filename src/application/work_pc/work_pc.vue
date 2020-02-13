@@ -3,7 +3,7 @@
     <a-layout id="components-layout-demo-custom-trigger">
       <a-layout-sider :trigger="null" collapsible v-model="collapsed">
         <div class="logo" />
-        <a-menu theme="dark" mode="inline" selectedKeys="[this.$routes.path]">
+        <a-menu theme="dark" mode="inline" selectedKeys="[this.$route.path]">
           <a-menu-item key="/Home" >
             <router-link to="/Home">
               <a-icon type="user" />
@@ -29,7 +29,7 @@
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
             @click="() => (collapsed = !collapsed)"
           />
-          <a-button type="primary" href='login.html'>Primary</a-button>
+          <a-button type="primary" href='login_pc'>Primary</a-button>
         </a-layout-header>
         <a-layout-content
           :style="{
@@ -49,6 +49,27 @@
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
 
+function isPC() {
+  //是否為PC端
+  var userAgentInfo = navigator.userAgent;
+  var Agents = [
+    "Android",
+    "iPhone",
+    "SymbianOS",
+    "Windows Phone",
+    "iPad",
+    "iPod"
+  ];
+  var flag = true;
+  for (var v = 0; v < Agents.length; v++) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false;
+      break;
+    }
+  }
+  return flag;
+}
+
 export default {
   name: "App",
   data() {
@@ -57,7 +78,14 @@ export default {
     };
   },
   created() {
-    this.$router.push({ path: '/Home' })
+    this.$router.push({ path: '/Home' });
+    console.log("isPC");
+    if (isPC() === true) {
+      console.log("isPC = true");
+    } else {
+      document.location.href = "/work_mobile";
+      console.log("isPC = false");
+    }
   },
   methods: {
   }

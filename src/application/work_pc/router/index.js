@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/application/login/page/Home.vue'
-import Setting from '@/application/login/page/Setting.vue'
+import Home from '@/application/work_pc/page/Home.vue'
+import Setting from '@/application/work_pc/page/Setting.vue'
 
 //使用 vue-router
 Vue.use(VueRouter)
