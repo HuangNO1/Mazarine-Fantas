@@ -1,10 +1,12 @@
 <template>
   <a-form :form="form" @submit="handleSubmit">
-  <a-form-item v-bind="formItemLayout" label="Username">
+    <a-form-item v-bind="formItemLayout" label="Username">
       <a-input
         v-decorator="[
           'userName',
-          { rules: [{ required: true, message: 'Please input your username!' }] },
+          {
+            rules: [{ required: true, message: 'Please input your username!' }]
+          }
         ]"
       >
       </a-input>
@@ -17,14 +19,14 @@
             rules: [
               {
                 type: 'email',
-                message: 'The input is not valid E-mail!',
+                message: 'The input is not valid E-mail!'
               },
               {
                 required: true,
-                message: 'Please input your E-mail!',
-              },
-            ],
-          },
+                message: 'Please input your E-mail!'
+              }
+            ]
+          }
         ]"
       />
     </a-form-item>
@@ -36,13 +38,13 @@
             rules: [
               {
                 required: true,
-                message: 'Please input your password!',
+                message: 'Please input your password!'
               },
               {
-                validator: validateToNextPassword,
-              },
-            ],
-          },
+                validator: validateToNextPassword
+              }
+            ]
+          }
         ]"
         type="password"
       />
@@ -55,36 +57,17 @@
             rules: [
               {
                 required: true,
-                message: 'Please confirm your password!',
+                message: 'Please confirm your password!'
               },
               {
-                validator: compareToFirstPassword,
-              },
-            ],
-          },
+                validator: compareToFirstPassword
+              }
+            ]
+          }
         ]"
         type="password"
         @blur="handleConfirmBlur"
       />
-    </a-form-item>
-    <a-form-item
-      v-bind="formItemLayout"
-      label="Captcha"
-      extra="We must make sure that your are a human."
-    >
-      <a-row :gutter="8">
-        <a-col :span="12">
-          <a-input
-            v-decorator="[
-              'captcha',
-              { rules: [{ required: true, message: 'Please input the captcha you got!' }] },
-            ]"
-          />
-        </a-col>
-        <a-col :span="12">
-          <a-button>Get captcha</a-button>
-        </a-col>
-      </a-row>
     </a-form-item>
     <a-form-item v-bind="tailFormItemLayout">
       <a-checkbox v-decorator="['agreement', { valuePropName: 'checked' }]">
@@ -95,88 +78,84 @@
       </a-checkbox>
     </a-form-item>
     <a-form-item v-bind="tailFormItemLayout">
-      <a-button type="primary" html-type="submit">
+      <a-button type="primary" html-type="submit" @click="showModal">
         Sign up
       </a-button>
     </a-form-item>
+    <!--驗證碼彈出框-->
+    <a-modal
+      title="Verification"
+      centered
+      :visible="visible"
+      @cancel="handleCancel"
+    >
+      <template slot="footer">
+        <div
+          class="slideSuccess slider"
+          :class="[verSeccuss ? 'visible' : 'invisible']"
+        >
+          <div><a-icon type="loading" /> {{ msg }}</div>
+        </div>
+      </template>
+      <div class="slider">
+        <slide-verify
+          :l="42"
+          :r="10"
+          :w="310"
+          :h="155"
+          slider-text="Swipe right"
+          @success="onSuccess"
+          @fail="onFail"
+          @refresh="onRefresh"
+        ></slide-verify>
+      </div>
+    </a-modal>
   </a-form>
 </template>
 
 <script>
-const residences = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          },
-        ],
-      },
-    ],
-  },
-];
-
 export default {
   data() {
     return {
       confirmDirty: false,
-      residences,
       autoCompleteResult: [],
       formItemLayout: {
         labelCol: {
           xs: { span: 24 },
-          sm: { span: 8 },
+          sm: { span: 8 }
         },
         wrapperCol: {
           xs: { span: 24 },
-          sm: { span: 16 },
-        },
+          sm: { span: 16 }
+        }
       },
       tailFormItemLayout: {
         wrapperCol: {
           xs: {
             span: 24,
-            offset: 0,
+            offset: 0
           },
           sm: {
             span: 16,
-            offset: 8,
-          },
-        },
+            offset: 8
+          }
+        }
       },
+      visible: false,
+      confirmLoading: false,
+      msg: "",
+      verSeccuss: false
     };
   },
   beforeCreate() {
-    this.form = this.$form.createForm(this, { name: 'register' });
+    this.form = this.$form.createForm(this, { name: "register" });
   },
   methods: {
     handleSubmit(e) {
       e.preventDefault();
       this.form.validateFieldsAndScroll((err, values) => {
         if (!err) {
-          console.log('Received values of form: ', values);
+          console.log("Received values of form: ", values);
         }
       });
     },
@@ -186,8 +165,8 @@ export default {
     },
     compareToFirstPassword(rule, value, callback) {
       const form = this.form;
-      if (value && value !== form.getFieldValue('password')) {
-        callback('Two passwords that you enter is inconsistent!');
+      if (value && value !== form.getFieldValue("password")) {
+        callback("Two passwords that you enter is inconsistent!");
       } else {
         callback();
       }
@@ -195,7 +174,7 @@ export default {
     validateToNextPassword(rule, value, callback) {
       const form = this.form;
       if (value && this.confirmDirty) {
-        form.validateFields(['confirm'], { force: true });
+        form.validateFields(["confirm"], { force: true });
       }
       callback();
     },
@@ -204,10 +183,54 @@ export default {
       if (!value) {
         autoCompleteResult = [];
       } else {
-        autoCompleteResult = ['.com', '.org', '.net'].map(domain => `${value}${domain}`);
+        autoCompleteResult = [".com", ".org", ".net"].map(
+          domain => `${value}${domain}`
+        );
       }
       this.autoCompleteResult = autoCompleteResult;
     },
-  },
+    showModal() {
+      this.visible = true;
+    },
+    handleCancel() {
+      this.visible = false;
+    },
+    onSuccess() {
+      this.msg = "Success";
+      this.verSeccuss = true;
+      setTimeout(() => {
+        this.visible = false;
+        this.verSeccuss = false;
+        document.location.href = "/login_pc#/Login";
+      }, 1000);
+    },
+    onFail() {
+      this.msg = "";
+    },
+    onRefresh() {
+      this.msg = "";
+    }
+  }
 };
 </script>
+<style>
+.slider {
+  display: flex;
+  justify-content: center;
+  margin-buttom: 1rem;
+}
+
+.slideSuccess {
+  text-align: center;
+  color: green;
+  font-size: 1.3rem;
+}
+
+.visible {
+  display: inline;
+}
+
+.invisible {
+  display: none;
+}
+</style>

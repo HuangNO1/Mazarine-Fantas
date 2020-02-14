@@ -57,7 +57,21 @@
       </a-button>
     </a-form-item>
     <!--驗證碼彈出框-->
-    <a-modal title="Verification" :visible="visible" centered :footer="null">
+    <a-modal
+      title="Verification"
+      :visible="visible"
+      centered
+      closable="false"
+      @cancel="handleCancel"
+    >
+      <template slot="footer">
+        <div
+          class="slideSuccess slider"
+          :class="[verSeccuss ? 'visible' : 'invisible']"
+        >
+          <div><a-icon type="loading" /> {{ msg }}</div>
+        </div>
+      </template>
       <div class="slider">
         <slide-verify
           :l="42"
@@ -69,13 +83,6 @@
           @fail="onFail"
           @refresh="onRefresh"
         ></slide-verify>
-      </div>
-
-      <div
-        class="slideSuccess slider"
-        :class="[verSeccuss ? 'visible' : 'invisible']"
-      >
-        <div><a-icon type="loading" /> {{ msg }}</div>
       </div>
     </a-modal>
   </a-form>
@@ -133,6 +140,9 @@ export default {
           console.log("Received values of form: ", values);
         }
       });
+    },
+    handleCancel() {
+      this.visible = false;
     },
     showModal() {
       this.visible = true;
