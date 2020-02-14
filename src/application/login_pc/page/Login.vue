@@ -47,15 +47,49 @@
       <a class="login-form-forgot" href="">
         Forgot password
       </a>
-      <a-button type="primary" html-type="submit" class="login-form-button">
+      <a-button
+        type="primary"
+        html-type="submit"
+        @click="showModal"
+        class="login-form-button"
+      >
         Sign in
       </a-button>
     </a-form-item>
+    <!--驗證碼彈出框-->
+    <a-modal
+      title="Verification"
+      :visible="visible"
+      @ok="handleOk"
+      :confirmLoading="confirmLoading"
+      @cancel="handleCancel"
+      centered
+    >
+      <slide-verify
+        :l="42"
+        :r="10"
+        :w="310"
+        :h="155"
+        slider-text="向右滑动"
+        @success="onSuccess"
+        @fail="onFail"
+        @refresh="onRefresh"
+      ></slide-verify>
+      <div>{{ msg }}</div>
+    </a-modal>
   </a-form>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      ModalText: "Content of the modal",
+      visible: false,
+      confirmLoading: false,
+      msg: '',
+    };
+  },
   beforeCreate() {
     this.form = this.$form.createForm(this, { name: "normal_login" });
   },
@@ -67,6 +101,30 @@ export default {
           console.log("Received values of form: ", values);
         }
       });
+    },
+    showModal() {
+      this.visible = true;
+    },
+    handleOk(e) {
+      this.ModalText = "The modal will be closed after two seconds";
+      this.confirmLoading = true;
+      setTimeout(() => {
+        this.visible = false;
+        this.confirmLoading = false;
+      }, 2000);
+    },
+    handleCancel(e) {
+      console.log("Clicked cancel button");
+      this.visible = false;
+    },
+    onSuccess() {
+      this.msg = "login success";
+    },
+    onFail() {
+      this.msg = "";
+    },
+    onRefresh() {
+      this.msg = "";
     }
   }
 };
