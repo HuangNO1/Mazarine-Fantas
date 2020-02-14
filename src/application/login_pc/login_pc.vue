@@ -47,27 +47,6 @@
 </template>
 
 <script>
-function isPC() {
-  //是否為PC端
-  var userAgentInfo = navigator.userAgent;
-  var Agents = [
-    "Android",
-    "iPhone",
-    "SymbianOS",
-    "Windows Phone",
-    "iPad",
-    "iPod"
-  ];
-  var flag = true;
-  for (var v = 0; v < Agents.length; v++) {
-    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-      flag = false;
-      break;
-    }
-  }
-  return flag;
-}
-
 export default {
   name: "App",
   data() {
@@ -76,16 +55,7 @@ export default {
       isClickSignUp: "primary"
     };
   },
-  created() {
-    this.$router.push({ path: "/Login" });
-    console.log("isPC");
-    if (isPC() === true) {
-      console.log("isPC = true");
-    } else {
-      document.location.href = "/login_mobile";
-      console.log("isPC = false");
-    }
-  },
+  created() {},
   methods: {
     callback(key) {
       console.log(key);

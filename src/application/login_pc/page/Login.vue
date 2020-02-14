@@ -57,41 +57,73 @@
       </a-button>
     </a-form-item>
     <!--驗證碼彈出框-->
-    <a-modal
-      title="Verification"
-      :visible="visible"
-      @ok="handleOk"
-      :confirmLoading="confirmLoading"
-      @cancel="handleCancel"
-      centered
-    >
-      <slide-verify
-        :l="42"
-        :r="10"
-        :w="310"
-        :h="155"
-        slider-text="向右滑动"
-        @success="onSuccess"
-        @fail="onFail"
-        @refresh="onRefresh"
-      ></slide-verify>
-      <div>{{ msg }}</div>
+    <a-modal title="Verification" :visible="visible" centered :footer="null">
+      <div class="slider">
+        <slide-verify
+          :l="42"
+          :r="10"
+          :w="310"
+          :h="155"
+          slider-text="Swipe right"
+          @success="onSuccess"
+          @fail="onFail"
+          @refresh="onRefresh"
+        ></slide-verify>
+      </div>
+
+      <div
+        class="slideSuccess slider"
+        :class="[verSeccuss ? 'visible' : 'invisible']"
+      >
+        <div><a-icon type="loading" /> {{ msg }}</div>
+      </div>
     </a-modal>
   </a-form>
 </template>
 
 <script>
+function isPC() {
+  //是否為PC端
+  var userAgentInfo = navigator.userAgent;
+  var Agents = [
+    "Android",
+    "iPhone",
+    "SymbianOS",
+    "Windows Phone",
+    "iPad",
+    "iPod"
+  ];
+  var flag = true;
+  for (var v = 0; v < Agents.length; v++) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false;
+      break;
+    }
+  }
+  return flag;
+}
+
 export default {
   data() {
     return {
-      ModalText: "Content of the modal",
       visible: false,
       confirmLoading: false,
-      msg: '',
+      msg: "",
+      verSeccuss: false
     };
   },
   beforeCreate() {
     this.form = this.$form.createForm(this, { name: "normal_login" });
+  },
+  created() {
+    // this.$router.push({ path: "/Login" ,replace: true});
+    console.log("isPC");
+    if (isPC() === true) {
+      console.log("isPC = true");
+    } else {
+      document.location.href = "/login_mobile";
+      console.log("isPC = false");
+    }
   },
   methods: {
     handleSubmit(e) {
@@ -105,20 +137,14 @@ export default {
     showModal() {
       this.visible = true;
     },
-    handleOk(e) {
-      this.ModalText = "The modal will be closed after two seconds";
-      this.confirmLoading = true;
+    onSuccess() {
+      this.msg = "Success";
+      this.verSeccuss = true;
       setTimeout(() => {
         this.visible = false;
-        this.confirmLoading = false;
-      }, 2000);
-    },
-    handleCancel(e) {
-      console.log("Clicked cancel button");
-      this.visible = false;
-    },
-    onSuccess() {
-      this.msg = "login success";
+        this.verSeccuss = false;
+        document.location.href = "/work_pc#/Home";
+      }, 1000);
     },
     onFail() {
       this.msg = "";
@@ -138,5 +164,25 @@ export default {
 }
 #components-form-demo-normal-login .login-form-button {
   width: 100%;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  margin-buttom: 1rem;
+}
+
+.slideSuccess {
+  text-align: center;
+  color: green;
+  font-size: 1.3rem;
+}
+
+.visible {
+  display: inline;
+}
+
+.invisible {
+  display: none;
 }
 </style>

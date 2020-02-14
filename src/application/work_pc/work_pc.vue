@@ -4,19 +4,19 @@
       <a-layout-sider :trigger="null" collapsible v-model="collapsed">
         <div class="logo" />
         <a-menu theme="dark" mode="inline" selectedKeys="[this.$route.path]">
-          <a-menu-item key="/Home" >
+          <a-menu-item key="/Home">
             <router-link to="/Home">
               <a-icon type="user" />
               <span>nav 1</span>
             </router-link>
           </a-menu-item>
-          <a-menu-item key="/Setting" >
+          <a-menu-item key="/Setting">
             <router-link to="/Setting">
               <a-icon type="video-camera" />
               <span>nav 2</span>
             </router-link>
           </a-menu-item>
-          <a-menu-item key="3" >
+          <a-menu-item key="3">
             <a-icon type="upload" />
             <span>nav 3</span>
           </a-menu-item>
@@ -29,66 +29,33 @@
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
             @click="() => (collapsed = !collapsed)"
           />
-          <a-button type="primary" href='login_pc'>Primary</a-button>
+          <a-button type="primary" href="login_pc#/Login">Primary</a-button>
         </a-layout-header>
         <a-layout-content
           :style="{
-            margin: '0px 16px',
+            margin: '0px 16px'
           }"
         >
           <router-view></router-view>
         </a-layout-content>
         <a-layout-footer style="text-align: center">
-        English Writing Platform ©2020 Created by Mazarine-Fantas
-      </a-layout-footer>
+          English Writing Platform ©2020 Created by Mazarine-Fantas
+        </a-layout-footer>
       </a-layout>
     </a-layout>
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
-
-function isPC() {
-  //是否為PC端
-  var userAgentInfo = navigator.userAgent;
-  var Agents = [
-    "Android",
-    "iPhone",
-    "SymbianOS",
-    "Windows Phone",
-    "iPad",
-    "iPod"
-  ];
-  var flag = true;
-  for (var v = 0; v < Agents.length; v++) {
-    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-      flag = false;
-      break;
-    }
-  }
-  return flag;
-}
-
 export default {
   name: "App",
   data() {
     return {
-      collapsed: false,
+      collapsed: false
     };
   },
-  created() {
-    this.$router.push({ path: '/Home' });
-    console.log("isPC");
-    if (isPC() === true) {
-      console.log("isPC = true");
-    } else {
-      document.location.href = "/work_mobile";
-      console.log("isPC = false");
-    }
-  },
-  methods: {
-  }
+  created() {},
+  methods: {}
 };
 </script>
 

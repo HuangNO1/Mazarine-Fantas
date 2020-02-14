@@ -58,7 +58,7 @@ module.exports = {
                 for (let i in pages) {
                     //res.write(`<a target="_self" href="/${i}">/${i}</a></br>`);
                     if (i === 'work_pc') {
-                        res.write(`<script>document.location.href="/${i}";</script>`);
+                        res.write(`<script>document.location.href="/${i}#/Home";</script>`);
                     }
                 }
                 res.end()
