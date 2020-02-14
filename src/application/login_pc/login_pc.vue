@@ -3,38 +3,44 @@
     <div class="icon">
       <a href="work_pc">M</a>
     </div>
-
-    <div class="forms">
-      <a-row>
-        <a-col :span="12">
-          <div>
-            <router-link to="/Login">
-              <a-button
-                :type="isClickSignIn"
-                @click="ClickSignIn"
-                size="large"
-                block
-                >Sign In</a-button
-              >
-            </router-link>
-          </div>
-        </a-col>
-        <a-col :span="12">
-          <div>
-            <router-link to="/Register">
-              <a-button
-                :type="isClickSignUp"
-                @click="ClickSignUp"
-                size="large"
-                block
-                >Sign Up</a-button
-              >
-            </router-link>
-          </div>
-        </a-col>
-      </a-row>
-      <div>
-        <router-view></router-view>
+    <div class="formPadding">
+      <div class="forms">
+        <a-row>
+          <a-col :span="12">
+            <div>
+              <router-link to="/Login">
+                <a-button
+                  :type="isClickSignIn"
+                  @click="ClickSignIn"
+                  size="large"
+                  block
+                  >Sign In</a-button
+                >
+              </router-link>
+            </div>
+          </a-col>
+          <a-col :span="12">
+            <div>
+              <router-link to="/Register">
+                <a-button
+                  :type="isClickSignUp"
+                  @click="ClickSignUp"
+                  size="large"
+                  block
+                  >Sign Up</a-button
+                >
+              </router-link>
+            </div>
+          </a-col>
+        </a-row>
+        <div class="view">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
+    <div class="flexBox">
+      <div class="fontIcon">
+        <img src="../../assets/icon/icon_blue.png" alt="" />
       </div>
     </div>
   </div>
@@ -71,7 +77,7 @@ export default {
     };
   },
   created() {
-    this.$router.push({ path: '/Login' });
+    this.$router.push({ path: "/Login" });
     console.log("isPC");
     if (isPC() === true) {
       console.log("isPC = true");
@@ -103,9 +109,12 @@ export default {
     "WenQuanYi Micro Hei", "Droid Sans Fallback", "AR PL UMing TW", Roboto,
     "Helvetica Neue", "Hiragino Maru Gothic ProN", メイリオ,
     "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  height: 100%;
   background: #78bef5;
+  height: 100%;
+  padding-bottom: 10%;
   animation: TestMove3 3s infinite alternate; /*IE*/
   -moz-animation: TestMove3 3s infinite alternate; /*FireFox*/
   -webkit-animation: TestMove3 3s infinite alternate; /*Chrome, Safari*/
@@ -140,14 +149,36 @@ export default {
   font-size: 8rem;
   color: #46a6f0;
   margin-left: 1.5rem;
+  position: fixed;
+}
+
+.formPadding {
+  padding-top: 10rem;
 }
 
 .forms {
-  margin: 1rem auto auto;
-  height: 30rem;
-  width: 30rem;
+  margin: auto auto 3rem;
+  width: 35rem;
   background-color: #ffffff;
   opacity: 80%;
   border-radius: 1em;
+}
+
+.view {
+  width: 25rem;
+  margin: 3rem auto auto;
+  padding-bottom: 3rem;
+}
+
+.flexBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  buttom: 1rem;
+}
+
+.fontIcon {
+  width: 570px;
 }
 </style>
