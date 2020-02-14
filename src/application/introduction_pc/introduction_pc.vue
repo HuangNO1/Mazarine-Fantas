@@ -1,16 +1,46 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <Header/>
+    <Content/>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue'
+import Content from './components/Content.vue'
+import Footer from './components/Footer.vue'
+
+function isPC() {
+  //是否為PC端
+  var userAgentInfo = navigator.userAgent;
+  var Agents = [
+    "Android",
+    "iPhone",
+    "SymbianOS",
+    "Windows Phone",
+    "iPad",
+    "iPod"
+  ];
+  var flag = true;
+  for (var v = 0; v < Agents.length; v++) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false;
+      break;
+    }
+  }
+  return flag;
+}
+
 export default {
   name: "App",
-  data() {
-    return {};
+  created() {
   },
-  created() {},
+  components: {
+    Header,
+    Content,
+    Footer
+  },
   methods: {}
 };
 </script>
@@ -27,7 +57,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  background: #78bef5;
-  height: 100%;
 }
+
 </style>

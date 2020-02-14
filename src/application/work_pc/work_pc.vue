@@ -29,7 +29,7 @@
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
             @click="() => (collapsed = !collapsed)"
           />
-          <a-button type="primary" href="login_pc#/Login">Primary</a-button>
+          <a-button type="primary" href="introduction_pc">Primary</a-button>
         </a-layout-header>
         <a-layout-content
           :style="{
@@ -39,7 +39,7 @@
           <router-view></router-view>
         </a-layout-content>
         <a-layout-footer style="text-align: center">
-          English Writing Platform ©2020 Created by Mazarine-Fantas
+          Massist ©2020 Created by Mazarine-Fantas
         </a-layout-footer>
       </a-layout>
     </a-layout>
