@@ -3,8 +3,8 @@ import App from './introduction_pc.vue'
 import router from "./router" //引入 router
 import 'ant-design-vue/dist/antd.css';
 
-import { Carousel } from 'ant-design-vue';
-Vue.use(Carousel);
+import { Button, Carousel } from 'ant-design-vue';
+Vue.use(Button).use(Carousel);
 
 Vue.config.productionTip = false
 
