@@ -16,9 +16,11 @@
     "popper.js": "^1.16.1",
     "vant": "^2.4.7",
     "vue": "^2.6.11",
+    "vue-burger-menu": "^2.0.3",
     "vue-carousel": "^0.18.0",
     "vue-monoplasty-slide-verify": "^1.1.0",
-    "vue-router": "^3.1.5"
+    "vue-router": "^3.1.5",
+    "vue-scrollactive": "^0.8.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",

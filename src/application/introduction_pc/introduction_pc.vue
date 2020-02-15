@@ -1,13 +1,40 @@
 <template>
   <div id="app">
+    <!--<div id="Nav">
+      <a-button type="link" href="#Footer" size="large">Features</a-button>
+      <a-button type="link" size="large">Support</a-button>
+      <a-button type="link" size="large">About us</a-button>
+    </div>-->
     <div id="Nav">
-      <a-button type="link" href="#Footer">Link</a-button>
-      <a-button type="link">Link</a-button>
-      <a-button type="link">Link</a-button>
+      <a-button type="primary" @click="showDrawer" size="large" icon="menu-unfold">
+      Menu
+    </a-button>
     </div>
+    
+    <a-drawer
+      placement="left"
+      :closable="false"
+      @close="onClose"
+      :visible="visible"
+      bodyStyle="background-color: #635b5b;height: 100%; color: white;font-size: 3rem;"
+      width="300"
+    >
+    <div>
+      <span>Massist</span>
+    </div>
+    <div>
+      <span>Features</span>
+    </div>
+    <div>
+      <span>Support</span>
+    </div>
+    <div>
+      <span>About us</span>
+    </div>
+    </a-drawer>
     <Header id="Header" class="fixed" />
-    <Content id="Content" class="CAbsolute"/>
-    <Footer id="Footer" class="FAbsolute"/>
+    <Content id="Content" class="CAbsolute" />
+    <Footer id="Footer" class="FAbsolute" />
   </div>
 </template>
 
@@ -40,7 +67,9 @@ function isPC() {
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      visible: false
+    };
   },
   created() {},
   components: {
@@ -48,7 +77,14 @@ export default {
     Content,
     Footer
   },
-  methods: {}
+  methods: {
+    showDrawer() {
+      this.visible = true;
+    },
+    onClose() {
+      this.visible = false;
+    }
+  }
 };
 </script>
 
@@ -69,7 +105,9 @@ export default {
 
 #Nav {
   position: fixed;
-  z-index: 1;
+  z-index: 4;
+  top: 30px;
+  left: 30px;
 }
 
 .fixed {

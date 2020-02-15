@@ -1,11 +1,11 @@
 <template>
   <div id="Header">
-    <a-carousel autoplay arrows>
+    <a-carousel style="height: 100%;width: 100%;" autoplay arrows>
       <div
         slot="prevArrow"
         slot-scope="props"
         class="custom-slick-arrow"
-        style="left: 10px;zIndex: 1"
+        style="left: 10px;z-index: 2;"
       >
         <a-icon type="left-circle" />
       </div>
@@ -13,7 +13,7 @@
         slot="nextArrow"
         slot-scope="props"
         class="custom-slick-arrow"
-        style="right: 10px"
+        style="right: 10px;z-index: 2;"
       >
         <a-icon type="right-circle" />
       </div>
@@ -64,7 +64,7 @@ export default {
   height: 100%;
   width: 100%;
   line-height: 30rem;
-  background: #364d79;
+  background: #fff;
   overflow: hidden;
 }
 
@@ -74,8 +74,9 @@ export default {
 
 .scrollImg {
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 150%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .ant-carousel >>> .custom-slick-arrow {
@@ -83,7 +84,7 @@ export default {
   height: 25px;
   font-size: 25px;
   color: #fff;
-  background-color: rgba(31, 45, 61, 0.11);
+  background-color: rgba(256, 566, 256, 0);
   opacity: 0.3;
 }
 .ant-carousel >>> .custom-slick-arrow:before {
