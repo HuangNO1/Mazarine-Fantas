@@ -53,6 +53,7 @@
 import Header from "./components/Header.vue";
 import Content from "./components/Content.vue";
 import Footer from "./components/Footer.vue";
+import SmoothScroll from "smooth-scroll"
 
 function isPC() {
   //是否為PC端
@@ -74,7 +75,7 @@ function isPC() {
   }
   return flag;
 }
-
+var scroll = new SmoothScroll('a[href*="#"]');
 export default {
   name: "App",
   data() {
