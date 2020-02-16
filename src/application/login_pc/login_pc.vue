@@ -115,6 +115,10 @@ export default {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .icon {
   font-size: 8rem;
   color: #46a6f0;

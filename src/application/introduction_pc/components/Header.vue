@@ -12,7 +12,7 @@
             'Since using this platform, I have fallen in love with English writing.',
             'No one can stop me from using Massist.',
             'After our captain used Massist, she got a perfect score of CET-6.',
-            'Have fun learning English.',
+            'Have fun learning English.'
           ]"
           :repeat="Infinity"
           :shuffle="false"
@@ -26,6 +26,7 @@
           caret-animation="blink"
         ></vue-typer>
       </div>
+      
     </div>
     <!-- carousel -->
     <a-carousel style="height: 100%;width: 100%;" autoplay arrows>
@@ -80,7 +81,7 @@ export default {
 }
 
 .typing {
-  width: 50%;
+  width: 100%;
   margin: auto;
   font-size: 2rem;
   text-align: center;
@@ -92,7 +93,6 @@ export default {
 .vue-typer .custom.char.selected {
   color: #e91e63;
 }
-
 </style>
 <style scoped>
 /* For demo */
@@ -101,7 +101,7 @@ export default {
   height: 100%;
   width: 100%;
   line-height: 30rem;
-  background: #fff;
+  background: #14aaf5;
   overflow: hidden;
 }
 
@@ -111,8 +111,9 @@ export default {
 
 .scrollImg {
   display: block;
-  max-width: 150%;
-  max-height: 100%;
+  min-width: 100%;
+  max-width: 300%;
+  height: 100%;
   object-fit: cover;
 }
 </style>

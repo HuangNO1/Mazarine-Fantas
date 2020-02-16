@@ -20,7 +20,9 @@
       width="300"
     >
       <div>
-        <span><a-icon type="book" /> Massist</span>
+        <a href="#app" v-smooth-scroll>
+          <span class="Menu"> <a-icon type="book" /> Massist </span>
+        </a>
       </div>
       <div>
         <span><a-icon type="pie-chart" /> Features</span>
@@ -32,18 +34,34 @@
         <span><a-icon type="team" /> About us</span>
       </div>
       <div>
-        <span><a-icon type="github" /> Github</span>
+        <span>
+          <a href="https://github.com/HuangNO1/Mazarine-Fantas">
+            <a-icon type="github" /> Github
+          </a>
+        </span>
       </div>
     </a-drawer>
-
+    <div id="Start">
+      <a-button
+        type="danger"
+        @click="toLogin"
+        size="large"
+        ghost
+      >
+        START
+      </a-button>
+    </div>
     <div class="Down">
       <div>
-        <a href="#Content" v-smooth-scroll="{duration: 2000}"><a-icon type="down"/></a>
+        <a href="#Content" v-smooth-scroll="{ duration: 2500 }"
+          ><a-icon type="down"
+        /></a>
       </div>
     </div>
 
     <!-- Page -->
-    <Header id="Header" class="fixed" />
+    <!--<div id="Header" class=""></div>-->
+    <Header class="fixed" />
     <Content id="Content" class="CAbsolute" />
     <Footer id="Footer" class="FAbsolute" />
   </div>
@@ -96,11 +114,8 @@ export default {
     onClose() {
       this.visible = false;
     },
-    goAnchor(val) {
-      let anchor = this.$el.querySelector(val);
-      this.$nextTick(() => {
-        document.querySelector(".el-main").scrollTop = anchor.offsetTop;
-      });
+    toLogin() {
+      document.location.href="/login_pc#/Login";
     }
   }
 };
@@ -120,32 +135,85 @@ export default {
   color: #2c3e50;
   height: 300%;
 }
-body {
-  scroll-behavior: smooth;
+
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
 }
+
+a:hover, a:active {
+  color: white;
+  text-decoration: none;
+}
+
 #Nav {
   position: fixed;
   z-index: 4;
   top: 30px;
   left: 30px;
 }
-
+#Start {
+  width: 100%;
+  position: fixed;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  bottom: 15rem;
+}
 .Down {
   position: absolute;
   width: 100%;
   justify-content: center;
   font-size: 3rem;
-  top: 90%;
+  bottom: 2rem;
+  color: black;
+  animation: DownFloat 0.6s infinite alternate; /*IE*/
+  -moz-animation: DownFloat 0.6s infinite alternate; /*FireFox*/
+  -webkit-animation: DownFloat 0.6s infinite alternate; /*Chrome, Safari*/
 }
 
 .Down > div {
   width: 64px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes DownFloat {
+  from {
+    bottom: 2rem;
+    font-size: 3rem;
+  }
+  to {
+    bottom: 0.5rem;
+    font-size: 3.5rem;
+  }
+}
+@-moz-keyframes DownFloat {
+  from {
+    bottom: 2rem;
+    font-size: 3rem;
+  }
+  to {
+    bottom: 0.5rem;
+    font-size: 3.5rem;
+  }
+}
+@-webkit-keyframes DownFloat {
+  from {
+    bottom: 2rem;
+    font-size: 3rem;
+  }
+  to {
+    bottom: 0.5rem;
+    font-size: 3.5rem;
+  }
 }
 
 .fixed {
   position: fixed;
-  z-index: -1;
+  z-index: -2;
 }
 
 .CAbsolute {
