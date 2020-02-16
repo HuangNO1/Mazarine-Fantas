@@ -1,22 +1,34 @@
 <template>
   <div id="Header">
+    <!-- Title -->
+    <div class="Title">
+      <div style="width: 570px; margin: 20rem auto 0;">
+        <img src="../../../assets/icon/icon_1.png" alt="" />
+      </div>
+      <!-- Write typing -->
+      <div class="typing">
+        <vue-typer
+          :text="[
+            'Since using this platform, I have fallen in love with English writing.',
+            'No one can stop me from using Massist.',
+            'After our captain used Massist, she got a perfect score of CET-6.',
+            'Have fun learning English.',
+          ]"
+          :repeat="Infinity"
+          :shuffle="false"
+          initial-action="typing"
+          :pre-type-delay="70"
+          :type-delay="70"
+          :pre-erase-delay="2000"
+          :erase-delay="250"
+          erase-style="select-all"
+          :erase-on-complete="false"
+          caret-animation="blink"
+        ></vue-typer>
+      </div>
+    </div>
+    <!-- carousel -->
     <a-carousel style="height: 100%;width: 100%;" autoplay arrows>
-      <div
-        slot="prevArrow"
-        slot-scope="props"
-        class="custom-slick-arrow"
-        style="left: 10px;z-index: 2;"
-      >
-        <a-icon type="left-circle" />
-      </div>
-      <div
-        slot="nextArrow"
-        slot-scope="props"
-        class="custom-slick-arrow"
-        style="right: 10px;z-index: 2;"
-      >
-        <a-icon type="right-circle" />
-      </div>
       <div>
         <img class="scrollImg" src="../../../assets/img/Header1.png" />
       </div>
@@ -30,6 +42,8 @@
   </div>
 </template>
 <script>
+import { VueTyper } from "vue-typer";
+
 export default {
   data() {
     return {
@@ -45,10 +59,12 @@ export default {
       ]
     };
   },
+  components: {
+    VueTyper
+  },
   created() {},
   mounted: {},
-  methods: {},
-  created() {}
+  methods: {}
 };
 </script>
 <style>
@@ -56,6 +72,27 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+.Title {
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+}
+
+.typing {
+  width: 50%;
+  margin: auto;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.vue-typer .custom.char.typed {
+  color: #14aaf5;
+}
+.vue-typer .custom.char.selected {
+  color: #e91e63;
+}
+
 </style>
 <style scoped>
 /* For demo */
@@ -77,20 +114,5 @@ export default {
   max-width: 150%;
   max-height: 100%;
   object-fit: cover;
-}
-
-.ant-carousel >>> .custom-slick-arrow {
-  width: 25px;
-  height: 25px;
-  font-size: 25px;
-  color: #fff;
-  background-color: rgba(256, 566, 256, 0);
-  opacity: 0.3;
-}
-.ant-carousel >>> .custom-slick-arrow:before {
-  display: none;
-}
-.ant-carousel >>> .custom-slick-arrow:hover {
-  opacity: 0.5;
 }
 </style>

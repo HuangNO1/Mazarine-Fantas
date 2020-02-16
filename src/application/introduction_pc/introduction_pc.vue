@@ -1,37 +1,48 @@
 <template>
   <div id="app">
-    <!--<div id="Nav">
-      <a-button type="link" href="#Footer" size="large">Features</a-button>
-      <a-button type="link" size="large">Support</a-button>
-      <a-button type="link" size="large">About us</a-button>
-    </div>-->
+    <!-- Menu -->
     <div id="Nav">
-      <a-button type="primary" @click="showDrawer" size="large" icon="menu-unfold">
-      Menu
-    </a-button>
+      <a-button
+        type="primary"
+        @click="showDrawer"
+        size="large"
+        icon="menu-unfold"
+      >
+        Menu
+      </a-button>
     </div>
-    
     <a-drawer
       placement="left"
-      :closable="false"
+      :closable="true"
       @close="onClose"
       :visible="visible"
-      bodyStyle="background-color: #635b5b;height: 100%; color: white;font-size: 3rem;"
+      bodyStyle="background-color: #0ca5f7;height: 100%; color: white;font-size: 2rem;padding-top: 5rem;line-height: 4rem;"
       width="300"
     >
-    <div>
-      <span>Massist</span>
-    </div>
-    <div>
-      <span>Features</span>
-    </div>
-    <div>
-      <span>Support</span>
-    </div>
-    <div>
-      <span>About us</span>
-    </div>
+      <div>
+        <span><a-icon type="book" /> Massist</span>
+      </div>
+      <div>
+        <span><a-icon type="pie-chart" /> Features</span>
+      </div>
+      <div>
+        <span><a-icon type="code" /> Support</span>
+      </div>
+      <div>
+        <span><a-icon type="team" /> About us</span>
+      </div>
+      <div>
+        <span><a-icon type="github" /> Github</span>
+      </div>
     </a-drawer>
+
+    <div class="Down">
+      <div>
+        <a href="#Content"><a-icon type="down"/></a>
+      </div>
+    </div>
+
+    <!-- Page -->
     <Header id="Header" class="fixed" />
     <Content id="Content" class="CAbsolute" />
     <Footer id="Footer" class="FAbsolute" />
@@ -77,12 +88,19 @@ export default {
     Content,
     Footer
   },
+  mounted() {},
   methods: {
     showDrawer() {
       this.visible = true;
     },
     onClose() {
       this.visible = false;
+    },
+    goAnchor(val) {
+      let anchor = this.$el.querySelector(val);
+      this.$nextTick(() => {
+        document.querySelector(".el-main").scrollTop = anchor.offsetTop;
+      });
     }
   }
 };
@@ -102,12 +120,27 @@ export default {
   color: #2c3e50;
   height: 300%;
 }
-
+body {
+  scroll-behavior: smooth;
+}
 #Nav {
   position: fixed;
   z-index: 4;
   top: 30px;
   left: 30px;
+}
+
+.Down {
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  font-size: 3rem;
+  top: 90%;
+}
+
+.Down > div {
+  width: 64px;
+  margin: auto;
 }
 
 .fixed {

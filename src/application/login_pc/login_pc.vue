@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="icon">
-      <a href="work_pc">M</a>
+      <a href="introduction_pc">M</a>
     </div>
     <div class="formPadding">
       <div class="forms">
