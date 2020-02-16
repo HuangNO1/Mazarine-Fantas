@@ -38,7 +38,7 @@
 
     <div class="Down">
       <div>
-        <a href="#Content"><a-icon type="down"/></a>
+        <a href="#Content" v-smooth-scroll="{duration: 2000}"><a-icon type="down"/></a>
       </div>
     </div>
 
