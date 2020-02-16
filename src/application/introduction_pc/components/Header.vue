@@ -72,6 +72,7 @@ export default {
 #Header {
   width: 100%;
   height: 100%;
+  background: #fff;
 }
 
 .Title {
@@ -101,7 +102,7 @@ export default {
   height: 100%;
   width: 100%;
   line-height: 30rem;
-  background: #14aaf5;
+  background: #fff;
   overflow: hidden;
 }
 
@@ -112,8 +113,8 @@ export default {
 .scrollImg {
   display: block;
   min-width: 100%;
-  max-width: 300%;
-  height: 100%;
+  max-width: 250%;
+  max-height: 120%;
   object-fit: cover;
 }
 </style>

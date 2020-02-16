@@ -19,21 +19,27 @@
       bodyStyle="background-color: #0ca5f7;height: 100%; color: white;font-size: 2rem;padding-top: 5rem;line-height: 4rem;"
       width="300"
     >
-      <div>
+      <div @click="clickMenu">
         <a href="#app" v-smooth-scroll>
-          <span class="Menu"> <a-icon type="book" /> Massist </span>
+          <span class="Menu"><a-icon type="book" /> Massist </span>
         </a>
       </div>
-      <div>
-        <span><a-icon type="pie-chart" /> Features</span>
+      <div @click="clickMenu">
+        <a href="#Features" v-smooth-scroll>
+          <span><a-icon type="pie-chart" /> Features</span>
+        </a>
       </div>
-      <div>
-        <span><a-icon type="code" /> Support</span>
+      <div @click="clickMenu">
+        <a href="#Support" v-smooth-scroll>
+          <span><a-icon type="code" /> Support</span>
+        </a>
       </div>
-      <div>
-        <span><a-icon type="team" /> About us</span>
+      <div @click="clickMenu">
+        <a href="#About" v-smooth-scroll>
+          <span><a-icon type="team" /> About us</span>
+        </a>
       </div>
-      <div>
+      <div @click="clickMenu">
         <span>
           <a href="https://github.com/HuangNO1/Mazarine-Fantas">
             <a-icon type="github" /> Github
@@ -42,34 +48,32 @@
       </div>
     </a-drawer>
     <div id="Start">
-      <a-button
-        type="danger"
-        @click="toLogin"
-        size="large"
-        ghost
-      >
+      <a-button type="danger" @click="toLogin" size="large" ghost>
         START
       </a-button>
     </div>
     <div class="Down">
       <div>
-        <a href="#Content" v-smooth-scroll="{ duration: 2500 }"
+        <a href="#Features" v-smooth-scroll="{ duration: 2500 }"
           ><a-icon type="down"
         /></a>
       </div>
     </div>
 
     <!-- Page -->
-    <!--<div id="Header" class=""></div>-->
-    <Header class="fixed" />
-    <Content id="Content" class="CAbsolute" />
-    <Footer id="Footer" class="FAbsolute" />
+    <Header id="Header" class="fixed" />
+    <Features id="Features" />
+    <Support id="Support" />
+    <About id="About" />
+    <Footer id="Footer" />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
-import Content from "./components/Content.vue";
+import Features from "./components/Features.vue";
+import Support from "./components/Support.vue";
+import About from "./components/About";
 import Footer from "./components/Footer.vue";
 
 function isPC() {
@@ -103,7 +107,9 @@ export default {
   created() {},
   components: {
     Header,
-    Content,
+    Features,
+    Support,
+    About,
     Footer
   },
   mounted() {},
@@ -114,8 +120,11 @@ export default {
     onClose() {
       this.visible = false;
     },
+    clickMenu() {
+      this.visible = false;
+    },
     toLogin() {
-      document.location.href="/login_pc#/Login";
+      document.location.href = "/login_pc#/Login";
     }
   }
 };
@@ -133,15 +142,17 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  height: 300%;
+  height: 500%;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: white;
   text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: white;
   text-decoration: none;
 }
@@ -216,12 +227,23 @@ a:hover, a:active {
   z-index: -2;
 }
 
-.CAbsolute {
+#Features {
   position: absolute;
   top: 100%;
 }
-.FAbsolute {
+
+#Support {
   position: absolute;
   top: 200%;
+}
+
+#About {
+  position: absolute;
+  top: 300%;
+}
+
+#Footer {
+  position: absolute;
+  top: 400%;
 }
 </style>

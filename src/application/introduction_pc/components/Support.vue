@@ -1,10 +1,10 @@
 <template>
-<div id="Content">
-    Content
+<div id="Support">
+    Support
 </div>
 </template>
 <style>
-#Content {
+#Support {
     background: #fff;
     height: 100%;
     width: 100%;
