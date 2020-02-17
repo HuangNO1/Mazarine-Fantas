@@ -21,7 +21,7 @@
     >
       <div @click="clickMenu">
         <a href="#app" v-smooth-scroll>
-          <span class="Menu"><a-icon type="book" /> Massist </span>
+          <span class="Menu"><a-icon type="book" /> Massist</span>
         </a>
       </div>
       <div @click="clickMenu">
