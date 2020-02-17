@@ -41,7 +41,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 吳南希
 - 劉文龍
 - 黎梓晟
-- 黃柏曛(HuangNO1, Rem, HuangNO1)
+- 黃柏曛(HuangNO1, Rem, Huang Po-Hsun)
 
 ## 頁面
 
