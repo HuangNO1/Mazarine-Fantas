@@ -82,37 +82,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  background: #78bef5;
   height: 100%;
   padding-bottom: 10%;
-  animation: TestMove3 3s infinite alternate; /*IE*/
-  -moz-animation: TestMove3 3s infinite alternate; /*FireFox*/
-  -webkit-animation: TestMove3 3s infinite alternate; /*Chrome, Safari*/
-}
-
-@keyframes TestMove3 {
-  from {
-    background-color: #78bef5;
-  }
-  to {
-    background-color: purple;
-  }
-}
-@-moz-keyframes TestMove3 {
-  from {
-    background-color: #78bef5;
-  }
-  to {
-    background-color: purple;
-  }
-}
-@-webkit-keyframes TestMove3 {
-  from {
-    background-color: #78bef5;
-  }
-  to {
-    background-color: purple;
-  }
+  background: url("../../assets/img/Login.png") no-repeat fixed center center/cover;
 }
 
 a {
@@ -134,7 +106,7 @@ a {
   margin: auto auto 3rem;
   width: 35rem;
   background-color: #ffffff;
-  opacity: 80%;
+  opacity: 90%;
   border-radius: 1em;
 }
 

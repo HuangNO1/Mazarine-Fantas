@@ -3,16 +3,23 @@ import App from './work_pc.vue'
 import router from "./router" //引入 router
 import 'ant-design-vue/dist/antd.css';
 
-import { Button } from 'ant-design-vue';
-Vue.use(Button);
-import { Icon } from 'ant-design-vue';
-Vue.use(Icon);
-import { Layout } from 'ant-design-vue';
-Vue.use(Layout);
-import { Menu } from 'ant-design-vue';
-Vue.use(Menu);
-import { Breadcrumb } from 'ant-design-vue';
-Vue.use(Breadcrumb);
+import {
+    Button,
+    Icon,
+    Layout,
+    Menu,
+    Breadcrumb,
+    Input,
+    Tooltip
+} from 'ant-design-vue';
+Vue.use(Button)
+    .use(Icon)
+    .use(Layout)
+    .use(Menu)
+    .use(Breadcrumb)
+    .use(Input)
+    .use(Tooltip);
+
 
 Vue.config.productionTip = false
 

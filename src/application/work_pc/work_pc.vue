@@ -6,24 +6,52 @@
         <a-menu theme="dark" mode="inline" selectedKeys="[this.$route.path]">
           <a-menu-item key="/Home">
             <router-link to="/Home">
+              <a-icon type="desktop" />
+              <span>Home</span>
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="/Home">
+            <router-link to="/Home">
+              <a-icon type="snippets" />
+              <span>Topic</span>
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="/Home">
+            <router-link to="/Home">
+              <a-icon type="team" />
+              <span>Teacher</span>
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="/Home">
+            <router-link to="/Home">
               <a-icon type="user" />
-              <span>nav 1</span>
+              <span>User</span>
             </router-link>
           </a-menu-item>
           <a-menu-item key="/Setting">
             <router-link to="/Setting">
-              <a-icon type="video-camera" />
-              <span>nav 2</span>
+              <a-icon type="setting" />
+              <span>Settings</span>
             </router-link>
           </a-menu-item>
-          <a-menu-item key="3">
-            <a-icon type="upload" />
-            <span>nav 3</span>
+          <a-menu-item key="/Write">
+            <router-link to="/Write">
+              <a-icon type="edit" />
+              <span>Writing</span>
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="Github">
+            <a href="https://github.com/HuangNO1/Mazarine-Fantas">
+              <a-icon type="github" />
+              <span>Github</span>
+            </a>
           </a-menu-item>
         </a-menu>
       </a-layout-sider>
       <a-layout>
-        <a-layout-header style="background: #fff; padding: 0">
+        <a-layout-header
+          style="background: #fff; padding: 0; margin: 1rem; border-radius: 10px;"
+        >
           <a-icon
             class="trigger"
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
@@ -33,12 +61,12 @@
         </a-layout-header>
         <a-layout-content
           :style="{
-            margin: '0px 16px'
+            margin: '0px 16px',
           }"
         >
           <router-view></router-view>
         </a-layout-content>
-        <a-layout-footer style="text-align: center">
+        <a-layout-footer style="text-align: center;">
           Massist ©2020 Created by Mazarine-Fantas
         </a-layout-footer>
       </a-layout>
