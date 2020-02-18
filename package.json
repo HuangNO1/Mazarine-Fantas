@@ -1,54 +1,51 @@
 {
-  "name": "mazarine-fantas",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "@chenfengyuan/vue-carousel": "^1.0.3",
-    "ant-design-vue": "^1.4.11",
-    "bootstrap": "^4.4.1",
-    "core-js": "^3.6.4",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.1",
-    "vant": "^2.4.7",
-    "vue": "^2.6.11",
-    "vue-burger-menu": "^2.0.3",
-    "vue-carousel": "^0.18.0",
-    "vue-monoplasty-slide-verify": "^1.1.0",
-    "vue-router": "^3.1.5",
-    "vue-scrollactive": "^0.8.0",
-    "vue-smooth-scroll": "^1.0.13",
-    "vue-typer": "^1.2.0"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.2.0",
-    "@vue/cli-plugin-eslint": "~4.2.0",
-    "@vue/cli-service": "~4.2.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.1.2",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "mazarine-fantas",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
+    "dependencies": {
+        "@chenfengyuan/vue-carousel": "^1.0.3",
+        "ant-design-vue": "^1.4.11",
+        "core-js": "^3.6.4",
+        "popper.js": "^1.16.1",
+        "vant": "^2.4.7",
+        "vue": "^2.6.11",
+        "vue-carousel": "^0.18.0",
+        "vue-monoplasty-slide-verify": "^1.1.0",
+        "vue-router": "^3.1.5",
+        "vue-scrollactive": "^0.8.0",
+        "vue-smooth-scroll": "^1.0.13",
+        "vue-typer": "^1.2.0"
     },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.2.0",
+        "@vue/cli-plugin-eslint": "~4.2.0",
+        "@vue/cli-service": "~4.2.0",
+        "babel-eslint": "^10.0.3",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^6.1.2",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
 }
