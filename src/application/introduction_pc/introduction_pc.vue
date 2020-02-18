@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <vue-scroll-progress-bar @complete="handleComplete" height="0.3rem" />
     <!-- Menu -->
     <div id="Nav">
       <a-button

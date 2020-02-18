@@ -9,6 +9,9 @@ Vue.use(Button).use(Carousel).use(Drawer).use(Icon).use(Row).use(Col).use(Card);
 import vueSmoothScroll from 'vue-smooth-scroll'
 Vue.use(vueSmoothScroll)
 
+import VueScrollProgressBar from '@guillaumebriday/vue-scroll-progress-bar'
+Vue.use(VueScrollProgressBar)
+
 Vue.config.productionTip = false
 
 new Vue({

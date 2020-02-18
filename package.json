@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "@chenfengyuan/vue-carousel": "^1.0.3",
+        "@guillaumebriday/vue-scroll-progress-bar": "^0.5.0",
         "ant-design-vue": "^1.4.11",
         "core-js": "^3.6.4",
         "echarts": "^4.6.0",

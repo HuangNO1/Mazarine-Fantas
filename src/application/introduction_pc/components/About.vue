@@ -1,6 +1,8 @@
 <template>
 <div id="About">
-    About
+    <div class="title">
+      <span>About us</span>
+    </div>
 </div>
 </template>
 <style>
