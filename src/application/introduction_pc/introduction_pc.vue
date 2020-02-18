@@ -54,7 +54,7 @@
     </div>
     <div class="Down">
       <div>
-        <a href="#Features" v-smooth-scroll="{ duration: 2500 }"
+        <a href="#Features" v-smooth-scroll="{ duration: 2000 }"
           ><a-icon type="down"
         /></a>
       </div>
