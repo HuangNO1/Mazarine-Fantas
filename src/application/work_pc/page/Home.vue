@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div style="overflow: auto; height: 100%; padding: 1.5rem;">
     <a-breadcrumb style="margin: 16px 0">
       <a-breadcrumb-item>Home</a-breadcrumb-item>
     </a-breadcrumb>
-    <div :style="{ padding: '24px', background: '#fff', minHeight: '50rem' }">
+    <div :style="{ padding: '24px', background: '#fff', minHeight: '50rem', marginBottom: '1.5rem' }">
       Bill is a cat.
     </div>
   </div>
