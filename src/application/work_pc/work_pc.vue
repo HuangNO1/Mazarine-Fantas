@@ -59,11 +59,7 @@
           />
           <a-button type="primary" href="introduction_pc">Primary</a-button>
         </a-layout-header>
-        <a-layout-content
-          :style="{
-            margin: '0px 16px',
-          }"
-        >
+        <a-layout-content>
           <router-view></router-view>
         </a-layout-content>
         <a-layout-footer style="text-align: center;">
