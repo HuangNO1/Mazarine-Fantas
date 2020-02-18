@@ -4,15 +4,15 @@
       <span>Features</span>
     </div>
     <a-row style="height: 90%">
-      <a-col :span="14">
+      <a-col :span="14" >
         <div class="Fcontent">
-          <span class="title2">Massist is an excellent English writing platform.</span>
-          <br><span class="compare">Compared with others:</span>
+          <div class="title2">Massist is an excellent English writing platform.</div>
+          <div class="compare">Compared with others:</div>
           <div style="margin: 4rem auto auto; font-size: 1.5rem; line-height: 3rem; color: #02c902;">
-            <span><a-icon type="check-circle" /> More cleaner and beautiful</span><br>
-            <span><a-icon type="check-circle" /> Allows identifying text on paper by image recognition</span><br>
-            <span><a-icon type="check-circle" /> Optimizing long text parsing by Attention mechanism</span><br>
-            <span><a-icon type="check-circle" /> Reduce errors using residual networks</span>
+            <div><a-icon type="check-circle" /> More cleaner and beautiful</div>
+            <div><a-icon type="check-circle" /> Allows identifying text on paper by image recognition</div>
+            <div><a-icon type="check-circle" /> Optimizing long text parsing by Attention mechanism</div>
+            <div><a-icon type="check-circle" /> Reduce errors using residual networks</div>
           </div>
         </div>
       </a-col>
@@ -53,9 +53,11 @@
 
 .Fcontent {
   padding: 1rem;
-  width: 60%;
-  margin: 8rem auto auto;
-
+  width: 70%;
+  display: flex;
+  margin: 8rem auto;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .title2 {

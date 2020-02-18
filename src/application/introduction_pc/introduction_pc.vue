@@ -20,22 +20,22 @@
       width="300"
     >
       <div @click="clickMenu">
-        <a href="#app" v-smooth-scroll>
+        <a href="#app" v-smooth-scroll="{ duration: 1000 }">
           <span class="Menu"><a-icon type="book" /> Massist</span>
         </a>
       </div>
       <div @click="clickMenu">
-        <a href="#Features" v-smooth-scroll>
+        <a href="#Features" v-smooth-scroll="{ duration: 1000 }">
           <span><a-icon type="pie-chart" /> Features</span>
         </a>
       </div>
       <div @click="clickMenu">
-        <a href="#Support" v-smooth-scroll>
+        <a href="#Support" v-smooth-scroll="{ duration: 1000 }">
           <span><a-icon type="code" /> Support</span>
         </a>
       </div>
       <div @click="clickMenu">
-        <a href="#About" v-smooth-scroll>
+        <a href="#About" v-smooth-scroll="{ duration: 1000 }">
           <span><a-icon type="team" /> About us</span>
         </a>
       </div>
@@ -230,16 +230,19 @@ a:active {
 #Features {
   position: absolute;
   top: 100%;
+  border-bottom: 1px dashed #d1d1d1;
 }
 
 #Support {
   position: absolute;
   top: 200%;
+  border-bottom: 1px dashed #d1d1d1;
 }
 
 #About {
   position: absolute;
   top: 300%;
+  border-bottom: 1px dashed #d1d1d1;
 }
 
 #Footer {
