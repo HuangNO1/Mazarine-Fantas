@@ -42,7 +42,7 @@
       </div>
       <div @click="clickMenu">
         <span>
-          <a href="https://github.com/HuangNO1/Mazarine-Fantas">
+          <a href="https://github.com/HuangNO1/Mazarine-Fantas" target="_blank">
             <a-icon type="github" /> Github
           </a>
         </span>
