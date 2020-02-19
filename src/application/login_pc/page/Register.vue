@@ -80,7 +80,8 @@
     <a-form-item v-bind="tailFormItemLayout">
       <a-button type="primary" html-type="submit" @click="showModal">
         Sign up
-      </a-button>
+      </a-button><br>
+      Have a account ? To <a href="login_pc#/Login">sign in</a>.
     </a-form-item>
     <!--驗證碼彈出框-->
     <a-modal

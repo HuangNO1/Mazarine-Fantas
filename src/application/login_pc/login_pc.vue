@@ -5,34 +5,6 @@
     </div>
     <div class="formPadding">
       <div class="forms">
-        <a-row>
-          <a-col :span="12">
-            <div>
-              <router-link to="/Login">
-                <a-button
-                  :type="isClickSignIn"
-                  @click="ClickSignIn"
-                  size="large"
-                  block
-                  >Sign In</a-button
-                >
-              </router-link>
-            </div>
-          </a-col>
-          <a-col :span="12">
-            <div>
-              <router-link to="/Register">
-                <a-button
-                  :type="isClickSignUp"
-                  @click="ClickSignUp"
-                  size="large"
-                  block
-                  >Sign Up</a-button
-                >
-              </router-link>
-            </div>
-          </a-col>
-        </a-row>
         <div class="view">
           <router-view></router-view>
         </div>
@@ -84,7 +56,8 @@ export default {
   color: #2c3e50;
   height: 100%;
   padding-bottom: 10%;
-  background: url("../../assets/img/Login.png") no-repeat fixed center center/cover;
+  background: url("../../assets/img/Login.png") no-repeat fixed center
+    center/cover;
 }
 
 a {
@@ -114,6 +87,7 @@ a {
   width: 25rem;
   margin: 3rem auto auto;
   padding-bottom: 3rem;
+  padding-top: 3rem;
 }
 
 .flexBox {

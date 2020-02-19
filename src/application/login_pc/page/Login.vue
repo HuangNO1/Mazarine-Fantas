@@ -56,6 +56,13 @@
         Sign in
       </a-button>
     </a-form-item>
+    <a-button
+      type="link"
+      class="login-form-button"
+      href="login_pc#/Register"
+    >
+      Sign up
+    </a-button>
     <!--驗證碼彈出框-->
     <a-modal
       title="Verification"
