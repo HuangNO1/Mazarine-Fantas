@@ -7,13 +7,14 @@
         <div>
           <div style="margin: 24px 0" />
           <a-textarea
+            v-model="answer"
             style="font-size: 1.2rem;"
             placeholder="Start writing your article."
             :autosize="{ minRows: 10, maxRows: 15 }"
           />
         </div>
         <div class="submit">
-          <a-button type="primary" ghost>Submit</a-button>
+          <a-button type="primary" @click="submitAnswer()" ghost>Submit</a-button>
         </div>
       </form>
     </div>
@@ -49,8 +50,8 @@ export default {
     return {
       collapsed: false,
       title: "Should a computer be a real person?",
-      description:
-        "Computers are widely used today in education causing some people to think that one day computers will completely replace teachers in the classroom. What is your opinion about computers replacing teachers in the future?"
+      description: "",
+      answer: ""
     };
   },
   created() {
@@ -64,7 +65,11 @@ export default {
 
     this.title = this.$route.query.id;
   },
-  methods: {}
+  methods: {
+    submitAnswer() {
+      this.$router.push({ path: "/Result", query: { id: this.answer } });
+    }
+  }
 };
 </script>
 <style>

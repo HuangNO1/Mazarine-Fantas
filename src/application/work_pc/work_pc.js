@@ -3,6 +3,10 @@ import App from './work_pc.vue'
 import router from "./router" //引入 router
 import 'ant-design-vue/dist/antd.css';
 
+import VCharts from 'v-charts'
+
+Vue.use(VCharts)
+
 import {
     Button,
     Icon,
@@ -13,7 +17,8 @@ import {
     Tooltip,
     Select,
     Table,
-    Tag
+    Tag,
+    List
 } from 'ant-design-vue';
 Vue.use(Button)
     .use(Icon)
@@ -24,7 +29,8 @@ Vue.use(Button)
     .use(Tooltip)
     .use(Select)
     .use(Table)
-    .use(Tag);
+    .use(Tag)
+    .use(List);
 
 import Vuex from 'vuex'
 Vue.use(Vuex)

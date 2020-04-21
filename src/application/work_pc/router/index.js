@@ -4,6 +4,7 @@ import Home from '@/application/work_pc/page/Home.vue'
 import Setting from '@/application/work_pc/page/Setting.vue'
 import Write from '@/application/work_pc/page/Write.vue'
 import Translate from '@/application/work_pc/page/Translate.vue'
+import Result from '@/application/work_pc/page/Result.vue'
 
 //使用 vue-router
 Vue.use(VueRouter)
@@ -29,6 +30,11 @@ export default new VueRouter({
             name: 'Translate',
             path: '/Translate',
             component: Translate
+        },
+        {
+            name: 'Result',
+            path: '/Result',
+            component: Result
         }
     ]
 })

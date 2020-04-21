@@ -8,6 +8,9 @@
         marginBottom: '1.5rem',
       }"
     >
+      <div style="font-size: 3rem">
+        Topic
+      </div>
       <a-table :columns="columns" :dataSource="data">
         <a slot="name" slot-scope="text">{{ text }}</a>
         <span slot="customTitle"><a-icon type="smile-o" /> Name</span>
