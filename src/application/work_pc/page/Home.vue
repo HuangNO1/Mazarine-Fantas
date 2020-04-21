@@ -27,11 +27,7 @@
           </a-tag>
         </span>
         <span slot="action" slot-scope="text, record">
-          <a>Invite 一 {{ record.name }}</a>
-          <a-divider type="vertical" />
-          <a>Delete</a>
-          <a-divider type="vertical" />
-          <a class="ant-dropdown-link"> More actions <a-icon type="down" /> </a>
+          <a @click="toWriteAnswer(record)">Answer</a>
         </span>
       </a-table>
     </div>
@@ -125,6 +121,10 @@ export default {
       console.log("isPC = false");
     }
   },
-  methods: {},
+  methods: {
+    toWriteAnswer(item) {
+      this.$router.push({ path: "/Write", query: { id: item.name } });
+    }
+  },
 };
 </script>

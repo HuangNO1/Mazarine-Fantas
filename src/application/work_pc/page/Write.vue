@@ -3,7 +3,7 @@
     <div :style="{ padding: '24px', background: '#fff', minHeight: '50rem' }">
       <form>
         <div class="title"><a-icon type="edit" /> TOPIC : {{ title }}</div>
-        <div class="descript">{{ description }}</div>
+        <!--<div class="descript">{{ description }}</div>-->
         <div>
           <div style="margin: 24px 0" />
           <a-textarea
@@ -42,6 +42,9 @@ function isPC() {
 }
 
 export default {
+  beforeRouteUpdate(to, from, next) {
+    this.title = to.query.id;
+  },
   data() {
     return {
       collapsed: false,
@@ -58,6 +61,8 @@ export default {
       document.location.href = "/work_mobile";
       console.log("isPC = false");
     }
+
+    this.title = this.$route.query.id;
   },
   methods: {}
 };
