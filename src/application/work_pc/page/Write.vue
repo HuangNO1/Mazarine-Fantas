@@ -1,9 +1,6 @@
 <template>
-  <div id="writing">
-    <a-breadcrumb style="margin: 16px 0">
-      <a-breadcrumb-item>Writting</a-breadcrumb-item>
-    </a-breadcrumb>
-    <div :style="{ padding: '50px', background: '#fff', minHeight: '50rem' }">
+  <div id="writing" style="overflow: auto; height: 100%; padding: 1.5rem;">
+    <div :style="{ padding: '24px', background: '#fff', minHeight: '50rem' }">
       <form>
         <div class="title"><a-icon type="edit" /> TOPIC : {{ title }}</div>
         <div class="descript">{{ description }}</div>
@@ -67,7 +64,7 @@ export default {
 </script>
 <style>
 #writting {
-    height: 50rem;
+  overflow: auto;
 }
 
 .title {
@@ -81,8 +78,8 @@ export default {
 }
 
 .submit {
-    display: flex;
-    justify-content: center;
-    bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  bottom: 1rem;
 }
 </style>

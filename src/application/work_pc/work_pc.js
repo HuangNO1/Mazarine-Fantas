@@ -10,7 +10,8 @@ import {
     Menu,
     Breadcrumb,
     Input,
-    Tooltip
+    Tooltip,
+    Select
 } from 'ant-design-vue';
 Vue.use(Button)
     .use(Icon)
@@ -18,8 +19,11 @@ Vue.use(Button)
     .use(Menu)
     .use(Breadcrumb)
     .use(Input)
-    .use(Tooltip);
+    .use(Tooltip)
+    .use(Select);
 
+import Vuex from 'vuex'
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 

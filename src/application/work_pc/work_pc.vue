@@ -10,36 +10,50 @@
               <span>Home</span>
             </router-link>
           </a-menu-item>
+          <!--
           <a-menu-item key="/Home">
             <router-link to="/Home">
               <a-icon type="snippets" />
               <span>Topic</span>
             </router-link>
           </a-menu-item>
+          -->
+          <!--
           <a-menu-item key="/Home">
             <router-link to="/Home">
               <a-icon type="team" />
               <span>Teacher</span>
             </router-link>
           </a-menu-item>
+          -->
+          <!--
           <a-menu-item key="/Home">
             <router-link to="/Home">
               <a-icon type="user" />
               <span>User</span>
             </router-link>
           </a-menu-item>
+          -->
+          <!--
           <a-menu-item key="/Setting">
             <router-link to="/Setting">
               <a-icon type="setting" />
               <span>Settings</span>
             </router-link>
-          </a-menu-item>
+          </a-menu-item>-->
           <a-menu-item key="/Write">
             <router-link to="/Write">
               <a-icon type="edit" />
               <span>Writing</span>
             </router-link>
           </a-menu-item>
+          <!--
+          <a-menu-item key="/Translate">
+            <router-link to="/Translate">
+              <a-icon type="thunderbolt" />
+              <span>Translate</span>
+            </router-link>
+          </a-menu-item>-->
           <a-menu-item key="Github">
             <a href="https://github.com/HuangNO1/Mazarine-Fantas">
               <a-icon type="github" />
@@ -119,4 +133,5 @@ export default {
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
 }
+
 </style>
