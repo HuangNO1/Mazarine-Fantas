@@ -41,12 +41,14 @@
               <span>Settings</span>
             </router-link>
           </a-menu-item>-->
+          <!--
           <a-menu-item key="/Write">
             <router-link to="/Write">
               <a-icon type="edit" />
               <span>Writing</span>
             </router-link>
           </a-menu-item>
+          -->
           <!--
           <a-menu-item key="/Translate">
             <router-link to="/Translate">
@@ -71,7 +73,7 @@
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
             @click="() => (collapsed = !collapsed)"
           />
-          <a-button type="primary" href="introduction_pc">Primary</a-button>
+          <a-button type="primary" href="introduction_pc">Massist</a-button>
         </a-layout-header>
         <a-layout-content>
           <router-view></router-view>

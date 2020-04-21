@@ -11,7 +11,9 @@ import {
     Breadcrumb,
     Input,
     Tooltip,
-    Select
+    Select,
+    Table,
+    Tag
 } from 'ant-design-vue';
 Vue.use(Button)
     .use(Icon)
@@ -20,7 +22,9 @@ Vue.use(Button)
     .use(Breadcrumb)
     .use(Input)
     .use(Tooltip)
-    .use(Select);
+    .use(Select)
+    .use(Table)
+    .use(Tag);
 
 import Vuex from 'vuex'
 Vue.use(Vuex)
